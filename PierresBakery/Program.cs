@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 using PierresBakery.Models;
 
 namespace PierresBakery
@@ -14,8 +15,8 @@ namespace PierresBakery
 
     static void PickItem(int pastriesCount = 0, int breadCount = 0)
     {
+      Console.WriteLine("CART: --- {0} pastries and {1} loaves", pastriesCount, breadCount);
       Console.WriteLine("Would you like to buy pastries or bread?");
-      Console.WriteLine("")
       string input = Console.ReadLine();
 
       if (input.ToLower().Contains("pastr"))
@@ -84,7 +85,21 @@ namespace PierresBakery
 
     static void CheckoutMenu(int pastriesCount, int breadCount)
     {
-
+      Console.WriteLine("You currently have {0} pastries and {1} loaves in your cart.", pastriesCount, breadCount);
+      Thread.Sleep(500);
+      Console.WriteLine("");
+      Console.Write("Calculating your total");
+      int costOfPastries = Pastry.GetBasketTotal(pastriesCount);
+      int costOfBread = Bread.GetBasketTotal(breadCount);
+      Thread.Sleep(700);
+      Console.Write(".");
+      Thread.Sleep(700);
+      Console.Write(".");
+      Thread.Sleep(700);
+      Console.Write(".");
+      Console.WriteLine("");
+      Console.WriteLine("Your total is ${0}. Thank you for shopping with us!", costOfBread + costOfPastries);
+      Thread.Sleep(700);
     }
 
     // static void BuyPastry(int pastriesCount, int breadCount)
