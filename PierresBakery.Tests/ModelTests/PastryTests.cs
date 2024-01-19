@@ -43,5 +43,24 @@ namespace PierresBakery.Tests
       Pastry.DeleteBasket();
       CollectionAssert.AreEqual(expectedPastryBasket, Pastry.GetPastryBasket());
     }
+    [TestMethod]
+    public void GetBasketTotal_ReturnsTotalCostOfBasketWhereEveryFourthPastryIs0_Int()
+    {
+      Assert.AreEqual(Pastry.GetBasketTotal(2), 4);
+      Pastry.DeleteBasket();
+      Assert.AreEqual(Pastry.GetBasketTotal(3), 6);
+      Pastry.DeleteBasket();
+      Assert.AreEqual(Pastry.GetBasketTotal(4), 6);
+      Pastry.DeleteBasket();
+      Assert.AreEqual(Pastry.GetBasketTotal(5), 8);
+      Pastry.DeleteBasket();
+      Assert.AreEqual(Pastry.GetBasketTotal(6), 10);
+      Pastry.DeleteBasket();
+      Assert.AreEqual(Pastry.GetBasketTotal(7), 12);
+      Pastry.DeleteBasket();
+      Assert.AreEqual(Pastry.GetBasketTotal(8), 12);
+      Pastry.DeleteBasket();
+      Assert.AreEqual(Pastry.GetBasketTotal(9), 14);
+    }
   }
 }
