@@ -47,12 +47,19 @@ namespace PierresBakery.Tests
     public void GetBasketTotal_ReturnsTotalCostOfBasketWhereEveryThirdBreadIs0_Int()
     {
       Assert.AreEqual(Bread.GetBasketTotal(2), 10);
+      Bread.DeleteBasket();
       Assert.AreEqual(Bread.GetBasketTotal(3), 10);
+      Bread.DeleteBasket();
       Assert.AreEqual(Bread.GetBasketTotal(4), 15);
+      Bread.DeleteBasket();
       Assert.AreEqual(Bread.GetBasketTotal(5), 20);
+      Bread.DeleteBasket();
       Assert.AreEqual(Bread.GetBasketTotal(6), 20);
+      Bread.DeleteBasket();
       Assert.AreEqual(Bread.GetBasketTotal(7), 25);
+      Bread.DeleteBasket();
       Assert.AreEqual(Bread.GetBasketTotal(8), 30);
+      Bread.DeleteBasket();
       Assert.AreEqual(Bread.GetBasketTotal(9), 30);
     }
   }
