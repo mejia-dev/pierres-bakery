@@ -19,5 +19,15 @@ namespace PierresBakery.Tests
       int cost = newBread.PerUnitCost;
       Assert.AreEqual(cost, 5);
     }
+    [TestMethod]
+    public void GetBreadBasket_ReturnsAllInstancesOfBread_List()
+    {
+      Bread Bread1 = new Bread();
+      Bread Bread2 = new Bread();
+      Bread Bread3 = new Bread();
+      List<Bread> expectedBreadBasket = new List<Bread> { Bread1, Bread2, Bread3 };
+      List<Bread> resultBreadBasket = Bread.GetBreadBasket();
+      CollectionAssert.AreEqual(expectedBreadBasket, resultBreadBasket);
+    }
   }
 }
