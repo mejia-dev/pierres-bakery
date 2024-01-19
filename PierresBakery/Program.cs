@@ -101,32 +101,5 @@ namespace PierresBakery
       Console.WriteLine("Your total is ${0}. Thank you for shopping with us!", costOfBread + costOfPastries);
       Thread.Sleep(700);
     }
-
-    // static void BuyPastry(int pastriesCount, int breadCount)
-    // {
-    //   Console.WriteLine("Each pastry costs $2. Buy 3 pastries, get the 4th one free!");
-
-    // }
-
   }
 }
-
-
-// Console.WriteLine("Enter the number of loaves you want to buy (enter 0 to exit): ");
-// if (int.TryParse(Console.ReadLine(), out int loaves))
-// {
-//   if (loaves == 0)
-//   {
-//     Console.WriteLine("Thank you for shopping at Pierre's Bakery. Goodbye!");
-//     break;
-//   }
-
-//   int totalCost = Bread.GetBasketTotal(loaves);
-
-//   Console.WriteLine($"Total cost for {loaves} loaves: ${totalCost}");
-//   Console.WriteLine();
-// }
-// else
-// {
-
-// }
