@@ -16,7 +16,7 @@ namespace PierresBakery.Tests
     public void GetPerUnitCost_ReturnsPerUnitCostOf5_Int()
     {
       Bread newBread = new Bread();
-      int cost = newBread.GetPerUnitCost();
+      int cost = newBread.PerUnitCost;
       Assert.AreEqual(cost, 5);
     }
   }
