@@ -40,5 +40,5 @@ namespace PierresBakery.Models
       }
       return totalCost;
     }
-
   }
+}
