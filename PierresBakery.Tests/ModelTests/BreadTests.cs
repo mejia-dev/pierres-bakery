@@ -39,7 +39,7 @@ namespace PierresBakery.Tests
     public void DeleteBasket_DeletesAllInstancesOfBread_Void()
     {
       Bread myBread = new Bread();
-      List<Bread> expectedBreadBasket = new List<Bread> {};
+      List<Bread> expectedBreadBasket = new List<Bread> { };
       Bread.DeleteBasket();
       CollectionAssert.AreEqual(expectedBreadBasket, Bread.GetBreadBasket());
     }
