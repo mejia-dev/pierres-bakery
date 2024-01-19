@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 
 namespace PierresBakery.Models
 {
@@ -21,6 +22,30 @@ namespace PierresBakery.Models
     public static void DeleteBasket()
     {
       _instances.Clear();
+    }
+
+    public static int GetBasketTotal(int loaves)
+    {
+      int totalCost = 0;
+      for (int i = 0; i < loaves; i++)
+      {
+        Bread newLoaf = new Bread();
+      }
+
+      foreach (Bread loaf in _instances) 
+      {
+        totalCost += loaf.PerUnitCost;
+      }
+
+      // if ((loaves % 3) = 0)
+      // {
+      //   int divisor = 
+      // }
+      // REMOVE MEEEEEEEEEEEE
+      Console.WriteLine("Loaves: {0}, TotalCost: {1}", loaves, totalCost);
+
+
+      return totalCost;
     }
     
   }
