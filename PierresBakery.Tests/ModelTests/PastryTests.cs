@@ -14,5 +14,12 @@ namespace PierresBakery.Tests
       Pastry newPastry = new Pastry();
       Assert.AreEqual(typeof(Pastry), newPastry.GetType());
     }
+    [TestMethod]
+    public void GetPerUnitCost_ReturnsPerUnitCostOf2_Int()
+    {
+      Pastry newPastry = new Pastry();
+      int cost = newPastry.PerUnitCost;
+      Assert.AreEqual(cost, 2);
+    }
   }
 }
