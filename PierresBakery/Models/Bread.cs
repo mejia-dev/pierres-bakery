@@ -1,12 +1,11 @@
 using System.Collections.Generic;
-using System;
 
 namespace PierresBakery.Models
 {
   public class Bread
   {
     public int PerUnitCost { get; }
-    private static List<Bread> _instances = new List<Bread> {};
+    private static List<Bread> _instances = new List<Bread> { };
 
     public Bread()
     {
@@ -27,26 +26,19 @@ namespace PierresBakery.Models
     public static int GetBasketTotal(int loaves)
     {
       int totalCost = 0;
+      int discountChecker = 0;
       for (int i = 0; i < loaves; i++)
       {
         Bread newLoaf = new Bread();
+        totalCost += newLoaf.PerUnitCost;
+        discountChecker += 1;
+        if (discountChecker == 3)
+        {
+          discountChecker = 0;
+          totalCost -= newLoaf.PerUnitCost;
+        }
       }
-
-      foreach (Bread loaf in _instances) 
-      {
-        totalCost += loaf.PerUnitCost;
-      }
-
-      // if ((loaves % 3) = 0)
-      // {
-      //   int divisor = 
-      // }
-      // REMOVE MEEEEEEEEEEEE
-      Console.WriteLine("Loaves: {0}, TotalCost: {1}", loaves, totalCost);
-
-
       return totalCost;
     }
-    
+
   }
-}
