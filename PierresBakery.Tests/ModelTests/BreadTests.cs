@@ -5,8 +5,12 @@ using PierresBakery.Models;
 namespace PierresBakery.Tests
 {
   [TestClass]
-  public class BreadTests
+  public class BreadTests : IDisposable
   {
+    public void Dispose()
+    {
+      Bread.DeleteBasket();
+    }
     [TestMethod]
     public void BreadConstructor_CreatesInstanceOfBread_Bread()
     {
@@ -29,6 +33,14 @@ namespace PierresBakery.Tests
       List<Bread> expectedBreadBasket = new List<Bread> { Bread1, Bread2, Bread3 };
       List<Bread> resultBreadBasket = Bread.GetBreadBasket();
       CollectionAssert.AreEqual(expectedBreadBasket, resultBreadBasket);
+    }
+    [TestMethod]
+    public void DeleteBasket_DeletesAllInstancesOfBread_Void()
+    {
+      Bread myBread = new Bread();
+      List<Bread> expectedBreadBasket = new List<Bread> {};
+      Bread.DeleteBasket();
+      CollectionAssert.AreEqual(expectedBreadBasket, Bread.GetBreadBasket());
     }
   }
 }
