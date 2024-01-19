@@ -6,7 +6,7 @@ using PierresBakery.Models;
 namespace PierresBakery.Tests
 {
   [TestClass]
-  public class PastryTests : IDisposable
+  public class PastryTests
   {
     [TestMethod]
     public void PastryConstructor_CreatesInstanceOfPastry_Pastry()
